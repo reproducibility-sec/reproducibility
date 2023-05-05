@@ -9,6 +9,6 @@ seaborn==0.11.2
 # Data
 
 # Steps to Reproduce
-Download the Jupyter Notebook *figures.ipynb* and run the figures.
+Download the Jupyter Notebook *figures.ipynb* and run the figures from start to finish.
 # Citation
 
