@@ -11,7 +11,8 @@ seaborn==0.11.2
 # Steps to Reproduce
 1. Install requirements: 
 <pre><code> pip install -r requirements.txt </code></pre>
-2. Download data *data.csv* and Jupyter Notebook *figures.ipynb* into the same directory
-3. Run code from start to finish.
+2. Download data *data.csv* and Jupyter Notebook *figures.ipynb* into the same directory, for example:
+<pre><code> git clone https://github.com/reproducibility-sec/reproducibility.git </code></pre>
+4. Run code from start to finish.
 # Citation
 
