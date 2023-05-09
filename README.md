@@ -9,6 +9,9 @@ seaborn==0.11.2
 # Data
 
 # Steps to Reproduce
-Download the Jupyter Notebook *figures.ipynb* and run the figures from start to finish.
+1. Install requirements: 
+<pre><code> pip install -r requirements.txt </code></pre>
+2. Download data *data.csv* and Jupyter Notebook *figures.ipynb* into the same directory
+3. Run code from start to finish.
 # Citation
 
