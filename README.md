@@ -1,5 +1,8 @@
 # "Get in Researchers; We're Measuring Reproducibility": A Reproducibility Study of Machine Learning Papers in Tier 1 Security Conferences
 Official implementation of paper: *"Get in Researchers; We're Measuring Reproducibility": A Reproducibility Study of Machine Learning Papers in Tier 1 Security Conferences*
+Currently have deployment for python script and Jupyter notebook. We are working on providing a Docker container to assist this and provide easier reproducibility. 
+Our data is in *sheet1.csv*, and *figure.py* and *figures-from-paper.ipynb* will generate all of the figures in our paper with the format *Figure[num].pdf* in 
+the working directory.
 # Requirements
 <pre><code>matplotlib==3.5.2
 conda==4.3.16
@@ -26,11 +29,11 @@ scipy==1.6.0
 seaborn==0.11.1
 </code></pre>
 # Data
-We provide our full, collected dataset for reproducing our experiments in *data.csv*.
+We provide our full, collected dataset for reproducing our experiments in *sheet1.csv*.
 # Steps to Reproduce
 1. Install requirements: 
 <pre><code> pip install -r requirements.txt </code></pre>
-2. Download data *data.csv* and Jupyter Notebook *figures.ipynb* into the same directory, for example:
+2. Download data *sheet1.csv* and Jupyter Notebook *figures-from-.ipynb* into the same directory, for example:
 <pre><code> git clone https://github.com/reproducibility-sec/reproducibility.git </code></pre>
 3. Run code from start to finish.
 # Citation
