@@ -2,9 +2,28 @@
 Official implementation of paper: *"Get in Researchers; We're Measuring Reproducibility": A Reproducibility Study of Machine Learning Papers in Tier 1 Security Conferences*
 # Requirements
 <pre><code>matplotlib==3.5.2
-numpy==1.21.5
-pandas==1.4.4
-seaborn==0.11.2
+conda==4.3.16
+ipykernel==5.4.3
+ipython==7.19.0
+ipython-genutils==0.2.0
+ipywidgets==7.6.3
+jupyter==1.0.0
+jupyter-client==6.1.11
+jupyter-console==6.2.0
+jupyter-core==4.7.0
+jupyterlab-pygments==0.1.2
+jupyterlab-widgets==1.0.0
+keras==2.11.0
+Keras-Preprocessing==1.1.2
+matplotlib==3.3.3
+notebook==6.2.0
+numba==0.55.1
+numpy==1.19.5
+packaging==20.8
+pandas==1.2.0
+scikit-learn==0.23.2
+scipy==1.6.0
+seaborn==0.11.1
 </code></pre>
 # Data
 We provide our full, collected dataset for reproducing our experiments in *data.csv*.
