@@ -4,8 +4,7 @@ Currently have deployment for python script and Jupyter notebook. We are working
 Our data is in *sheet1.csv*, and *figure.py* and *figures-from-paper.ipynb* will generate all of the figures in our paper with the format *Figure[num].pdf* in 
 the working directory.
 # Requirements
-<pre><code>matplotlib==3.5.2
-conda==4.3.16
+<pre><code>
 ipykernel==5.4.3
 ipython==7.19.0
 ipython-genutils==0.2.0
