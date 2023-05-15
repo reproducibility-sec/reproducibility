@@ -29,10 +29,12 @@ seaborn==0.11.1
 </code></pre>
 # Data
 We provide our full, collected dataset for reproducing our experiments in *sheet1.csv*.
+To recreat Figure 8, we collected new data from USENIX and the awarded badges. This
+data is in *artifact.csv*.
 # Steps to Reproduce
 1. Install requirements: 
 <pre><code> pip install -r requirements.txt </code></pre>
-2. Download data *sheet1.csv* and Jupyter Notebook *figures-from-paper.ipynb* into the same directory, for example:
+2. Download data *sheet1.csv*, *artifact.csv*, and Jupyter Notebook *figures-from-paper.ipynb* into the same directory, for example:
 <pre><code> git clone https://github.com/reproducibility-sec/reproducibility.git </code></pre>
 3. Start a Jupyter Notebook session with <code>jupyter notebook</code>.
 4. Select *figure-from-paper.ipynb*.
