@@ -32,8 +32,10 @@ We provide our full, collected dataset for reproducing our experiments in *sheet
 # Steps to Reproduce
 1. Install requirements: 
 <pre><code> pip install -r requirements.txt </code></pre>
-2. Download data *sheet1.csv* and Jupyter Notebook *figures-from-.ipynb* into the same directory, for example:
+2. Download data *sheet1.csv* and Jupyter Notebook *figures-from-paper.ipynb* into the same directory, for example:
 <pre><code> git clone https://github.com/reproducibility-sec/reproducibility.git </code></pre>
-3. Run code from start to finish.
+3. Start a Jupyter Notebook session with <code>jupyter notebook</code>.
+4. Select *figure-from-paper.ipynb*.
+5. Run each cell
 # Citation
 
