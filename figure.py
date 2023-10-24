@@ -228,7 +228,7 @@ ax.set_title(
 )
 
 plt.savefig("Figure2.pdf",bbox_inches='tight')
-
+plt.clf()
 
 
 
@@ -416,7 +416,7 @@ ax.set_title(
 )
 
 plt.savefig("Figure3.pdf",bbox_inches='tight')
-
+plt.clf()
 
 
 
@@ -616,7 +616,7 @@ ax.set_title(
 )
 
 plt.savefig("Figure4.pdf",bbox_inches='tight')
-
+plt.clf()
 
 ######### FIGURE 5 #########
 
@@ -788,7 +788,7 @@ ax.set_title(
 )
 
 plt.savefig("Figure5.pdf",bbox_inches='tight')
-
+plt.clf()
 
 
 
@@ -1003,7 +1003,7 @@ ax.set_title(
 )
 
 plt.savefig("Figure6.pdf",bbox_inches='tight')
-
+plt.close()
 
 
 ###### FIGURE 7 ########
@@ -1140,6 +1140,102 @@ ax.set_xlabel('', fontsize=20)
 ax.xaxis.set_major_formatter(mtick.PercentFormatter())
 
 plt.savefig("Figure7.pdf",bbox_inches='tight')
+plt.close()
+
+
+
+
+###### FIGURE 8 ######
+df = pd.read_csv('artifact.csv')
+
+doesNotRunDictSubmitted = {2020:0,2021:0,2022:0}
+runsDictSubmitted = {2020:0,2021:0,2022:0}
+
+doesNotRunDictNot = {2020:0,2021:0,2022:0}
+runsDictNot = {2020:0,2021:0,2022:0}
+
+for i in range(len(df['Paper Title'])):
+    year = df['Year'][i]
+    runs = df['Code Runs'][i]
+
+    if pd.notna(year):
+        year = int(year)
+        runs = int(runs)
+        hasCode = df['Has Code?'][i]
+        if hasCode != 0:
+            if df['Has artifact?'][i]==1:
+                if runs==1 or runs==3:
+                    runsDictSubmitted[year] += 1
+                else:
+                    doesNotRunDictSubmitted[year] += 1
+            else:
+                if runs==1 or runs==3:
+                    runsDictNot[year] += 1
+                else:
+                    doesNotRunDictNot[year] += 1
+
+# print(doesNotRunDictSubmitted)
+# print(runsDictSubmitted)
+# print(doesNotRunDictNot)
+# print(runsDictNot)
+
+doesNotRunSubmitted = []
+runsSubmitted = []
+doesNotRunNot = []
+runsNot = []
+for key in doesNotRunDictSubmitted.keys():
+    doesNotRunSubmitted.append(doesNotRunDictSubmitted[key])
+for key in runsDictSubmitted.keys():
+    runsSubmitted.append(runsDictSubmitted[key])
+for key in doesNotRunDictNot.keys():
+    doesNotRunNot.append(doesNotRunDictNot[key])
+for key in runsDictNot.keys():
+    runsNot.append(runsDictNot[key])
+
+years = ['2020','2021','2022']
+width = 0.69
+orange = small_palette[1]
+blue = small_palette[0]
+
+plt.rcParams["figure.figsize"] = (6,8)
+fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+ax1.bar(years, runsSubmitted, width, color=orange)
+ax1.bar(years, doesNotRunSubmitted, width,
+             bottom=runsSubmitted, color=blue)
+ax1.spines['right'].set_visible(False)
+ax1.spines['top'].set_visible(False)
+ax1.set(xlabel="Submitted To \n Artifact Evaluation")
+
+ax2.bar(years, runsNot, width, color=orange)
+ax2.bar(years, doesNotRunNot, width,
+             bottom=runsNot, color=blue)
+ax2.spines['right'].set_visible(False)
+ax2.spines['top'].set_visible(False)
+ax2.spines['left'].set_visible(False)
+ax2.tick_params(axis='y', which='both', left=False)
+ax2.set(xlabel="Not Submitted To  \n Artifact Evaluation")
+
+##Create Custom Legend
+legend_elements = [
+    # No Code
+    Line2D (
+        [0],[0], marker='s',color='w',markerfacecolor=small_palette[1],label='Code Worked',
+        markersize=15
+    ),
+    # Code
+    Line2D (
+        [0],[0], marker='s',color='w',markerfacecolor=small_palette[0],label='Code Did Not Work',
+        markersize=15
+    ),
+]
+
+ax2.legend(handles=legend_elements, loc='upper right',bbox_to_anchor=(0.9,1.06),prop={'size': 12},ncol=2)
+plt.savefig("Figure8.pdf",bbox_inches='tight')
+
+
+plt.close()
+
+
 
 ##### FIGURE 9 #######
 
@@ -1283,13 +1379,4 @@ xticks = [y for y in range(2013,2023)]
 # xticks.append('Totals')
 plt.xticks(xticks, fontsize=small_label_size)
 plt.savefig("Figure9.pdf",bbox_inches='tight')
-
-
-
-
-
-
-
-
-    
-    
+plt.clf()
