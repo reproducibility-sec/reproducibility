@@ -1,5 +1,6 @@
 # "Get in Researchers; We're Measuring Reproducibility": A Reproducibility Study of Machine Learning Papers in Tier 1 Security Conferences
 Official implementation of paper: *"Get in Researchers; We're Measuring Reproducibility": A Reproducibility Study of Machine Learning Papers in Tier 1 Security Conferences*
+We use Python 3.9.17 to make our figures.
 Currently have deployment for python script and Jupyter notebook. We are working on providing a Docker container to assist this and provide easier reproducibility. 
 Our data is in *sheet1.csv*, and *figure.py* and *figures-from-paper.ipynb* will generate all of the figures in our paper with the format *Figure[num].pdf* in 
 the working directory.
@@ -19,11 +20,9 @@ keras==2.11.0
 Keras-Preprocessing==1.1.2
 matplotlib==3.3.3
 notebook==6.2.0
-numba==0.55.1
 numpy==1.19.5
 packaging==20.8
 pandas==1.2.0
-scikit-learn==0.23.2
 scipy==1.6.0
 seaborn==0.11.1
 </code></pre>
